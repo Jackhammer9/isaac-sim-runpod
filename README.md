@@ -15,7 +15,12 @@ ghcr.io/jackhammer9/isaac-sim-runpod:817caf012918b53fd712758104966d6706f7cb57
 
 Digest: `sha256:1829b4b711b2f60c262877e30401cc095d17292cc454eb165d149996d0d22331`.
 [Build and test evidence](https://github.com/Jackhammer9/isaac-sim-runpod/actions/runs/43620077908).
-The rebuilt image has not yet been through a fresh GPU Pod smoke test.
+This exact image was also started on a fresh Runpod RTX 4090 Pod with driver
+595.91.07: Isaac reached `app ready` in 35.8 seconds after container startup,
+a rendered viewport was visually checked, both launch aliases prevented duplicate
+instances, and Selkies returned HTTP 200 through an SSH tunnel. An existing
+network workspace and Git checkout were preserved. This validates application
+startup/rendering; it does not validate a physics task or every host/GPU.
 
 ## Quick start
 
