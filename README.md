@@ -148,3 +148,23 @@ A new image tag needs an actual GPU session before being described as GPU-tested
 See [SECURITY.md](SECURITY.md). No personal keys, API tokens, scenes or account
 configuration belong in issues, the build context or image layers. Keep changes
 small, include reproduction steps, and preserve the SSH-only desktop boundary.
+
+## Maintainer: first publication
+
+GitHub creates new container packages as private, even when their source
+repository is public. After the first successful upload, open your GitHub
+package **isaac-sim-runpod ? Package settings ? Change visibility ? Public**.
+This is a separate setting from repository visibility; verify an anonymous pull
+before advertising an image as public. See
+[GitHub package visibility documentation](https://docs.github.com/en/packages/learn-github-packages/configuring-a-packages-access-control-and-visibility).
+Never make a personal workspace or a credential-containing image public.
+
+To verify a published image without Docker credentials, use a clean client:
+
+```sh
+docker pull ghcr.io/jackhammer9/isaac-sim-runpod:COMMIT_SHA
+```
+
+When upgrading an existing Pod, save its scene, retain its existing network
+volume, and remove any old container start-command override. This image uses
+its packaged entrypoint; it does not need a workspace repair wrapper.
