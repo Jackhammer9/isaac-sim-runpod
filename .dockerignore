@@ -1,0 +1,8 @@
+*
+!Dockerfile
+!entrypoint.py
+!launch-isaac.sh
+!fit-isaac-window.py
+!apply-selkies-fit.py
+!selkies-fit.js
+!check-desktop.py
