@@ -4,6 +4,19 @@ An Isaac Sim desktop in your browser, with SSH and VS Code access. Desktop
 dependencies and display fixes are installed in the image, rather than downloaded
 on every boot. Built around NVIDIA Isaac Sim 6.2.0 and Selkies 2.2.1.
 
+## Published image
+
+The first published image passed the container desktop checks and an anonymous
+registry manifest request. Use this exact image in Runpod:
+
+```text
+ghcr.io/jackhammer9/isaac-sim-runpod:817caf012918b53fd712758104966d6706f7cb57
+```
+
+Digest: `sha256:1829b4b711b2f60c262877e30401cc095d17292cc454eb165d149996d0d22331`.
+[Build and test evidence](https://github.com/Jackhammer9/isaac-sim-runpod/actions/runs/43620077908).
+The rebuilt image has not yet been through a fresh GPU Pod smoke test.
+
 ## Quick start
 
 1. Deploy a Secure Cloud NVIDIA RTX 4090 Pod on Runpod. This combination was
